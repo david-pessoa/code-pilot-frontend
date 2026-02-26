@@ -1,4 +1,4 @@
-import { BrouserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import PrivateRoutes from './PrivateRoutes';
 import Conversation from '../pages/Conversation';
 import Login from '../pages/Login';
