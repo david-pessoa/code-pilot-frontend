@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --background: #212121;
+  --cyan: #00C8FF;
+  --default-blue: #177BDF;
+  --config-sidebar: #136BC3;
+  --dark-blue: #1F4B77;
+  --code-background: #171717;
+  --pink: #FE209A;
+  --soft-pink: #D839A9;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: var(--background);
+  color: #fff;
+}
+
