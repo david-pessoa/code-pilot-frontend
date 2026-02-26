@@ -1,0 +1,6 @@
+.color-gradient {
+  display: inline-block;
+  background: linear-gradient(to right, var(--cyan), var(--pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

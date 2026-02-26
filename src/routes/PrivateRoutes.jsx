@@ -7,7 +7,7 @@ function Loader() {
 
 export default function PrivateRoute({ children }) {
   const { user, isUserDataLoading } = useAuth();
-  const IGNORE = true
+  const IGNORE = true;
 
   if (isUserDataLoading) return <Loader />;
 

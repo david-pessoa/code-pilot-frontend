@@ -6,15 +6,15 @@
   box-sizing: border-box;
 }
 
-:root{
+:root {
   --background: #212121;
-  --cyan: #00C8FF;
-  --default-blue: #177BDF;
-  --config-sidebar: #136BC3;
-  --dark-blue: #1F4B77;
+  --cyan: #00c8ff;
+  --default-blue: #177bdf;
+  --config-sidebar: #136bc3;
+  --dark-blue: #1f4b77;
   --code-background: #171717;
-  --pink: #FE209A;
-  --soft-pink: #D839A9;
+  --pink: #fe209a;
+  --soft-pink: #d839a9;
 }
 
 body {
@@ -23,3 +23,35 @@ body {
   color: #fff;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 4.375rem;
+}
+
+h2 {
+  font-size: 2.188rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.75rem;
+}
+
+h6 {
+  font-size: 0.5rem;
+}
