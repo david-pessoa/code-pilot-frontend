@@ -8,6 +8,17 @@
   margin-top: 4.125rem;
 }
 
+h2 {
+  margin-bottom: 6.25rem;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  gap: 1.313rem;
+}
+
 .container {
   background-color: var(--default-blue);
   width: 632px;
@@ -19,19 +30,78 @@
   border-radius: 20px;
 }
 
+.inputField {
+  display: flex;
+  width: 22.87rem;
+  flex-direction: column;
+}
+
+label {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+
+input {
+  border: none;
+  border-radius: 10px;
+  height: 43px;
+  padding-left: 10px;
+  font-size: 14px;
+  outline: none;
+  
+}
+
+input:active, input:focus {
+  outline: none;
+}
+
+input[type="password"] {
+ letter-spacing: 1px;
+ font-size: 1.2rem;
+}
+
+.forgotPassword {
+  margin-top: 1.313rem;
+  width: 100%;
+  text-align: right;
+  margin-bottom: 2.5rem;
+}
+
+.forgotPassword a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+  font-size: 15px;
+}
+
 .button {
   font-size: 1.5rem;
   font-weight: 700;
   border-radius: 10px;
   color: #fff;
+  cursor: pointer;
+  padding: 0.6em 0.7em;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonContainer a {
+ width: 47%;
 }
 
 .registerBtn {
   background-color: var(--soft-pink);
   border: none;
+  width: 100%;
 }
 
 .loginBtn {
   background-color: transparent;
   border: 1px solid #fff;
+  width: 42%;
 }
