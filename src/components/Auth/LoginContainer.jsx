@@ -1,4 +1,5 @@
 import styles from './Auth.module.css';
+import { Link } from 'react-router-dom';
 
 export default function LoginContainer() {
   return (
@@ -19,10 +20,12 @@ export default function LoginContainer() {
           <a href="#">Esqueci minha senha</a>
         </div>
         <div className={styles.buttonContainer}>
-          <a href="/register">
-            <button className={`${styles.button} ${styles.registerBtn}`}>Cadastre-se</button>
-          </a>
-          <button className={`${styles.button} ${styles.loginBtn}`}>Login</button>
+          <Link to="/register" className={`${styles.button} ${styles.registerBtn}`}>
+            Cadastre-se
+          </Link>
+          <button type="submit" className={`${styles.button} ${styles.loginBtn}`}>
+            Login
+          </button>
         </div>
       </form>
     </>

@@ -12,6 +12,10 @@ h2 {
   margin-bottom: 6.25rem;
 }
 
+.registerTitle {
+  margin-bottom: 2.5rem;
+}
+
 fieldset {
   display: flex;
   flex-direction: column;
@@ -66,13 +70,15 @@ input[type='password'] {
   margin-top: 1.313rem;
   width: 100%;
   text-align: right;
-  margin-bottom: 2.5rem;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
 }
 
 .forgotPassword a {
   display: inline-block;
-  color: #fff;
-  text-decoration: none;
   width: 100%;
   font-size: 15px;
 }
@@ -87,18 +93,27 @@ input[type='password'] {
 }
 
 .buttonContainer {
+  margin-top: 2.5rem;
   display: flex;
   justify-content: space-between;
 }
 
 .buttonContainer a {
-  width: 47%;
+  width: 48%;
 }
 
+.submitRegisterBtn,
 .registerBtn {
   background-color: var(--soft-pink);
   border: none;
+}
+
+.registerBtn {
   width: 100%;
+}
+
+.submitRegisterBtn {
+  margin-left: auto;
 }
 
 .loginBtn {
@@ -117,7 +132,8 @@ input[type='password'] {
   }
 
   label {
-    font-size: 1.125rem;
+    font-size: 1rem;
+    font-weight: 400;
   }
 
   .inputField {
@@ -153,10 +169,6 @@ input[type='password'] {
     width: 85vw;
     margin-top: 0rem;
     padding: 1.5rem 0.8rem;
-  }
-
-  label {
-    font-size: 1rem;
   }
 
   input {
