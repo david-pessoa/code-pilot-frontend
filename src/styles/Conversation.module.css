@@ -1,0 +1,55 @@
+.header {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  transition: 0.5s ease-in-out;
+}
+
+.chatMenu {
+  transition: 0.5s ease-in-out;
+}
+
+.header.open, .chatMenu.open{
+  margin-left: 25.375rem;
+}
+
+.menuBox {
+  display: flex;
+}
+
+.menuIcon {
+  width: 55px;
+  height: 55px;
+}
+
+.menuBtn {
+  margin-right: 3rem;
+  margin-left: 20px;
+}
+
+.menuBtn.open {
+  display: none;
+}
+
+.menuBtn,
+.userIconBtn {
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.userIconBtn {
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+.userIcon {
+  width: 65px;
+  height: 64px;
+}
+
+.chatMenu {
+  margin-top: 8.875rem;
+  margin-left: 11.75rem;
+}

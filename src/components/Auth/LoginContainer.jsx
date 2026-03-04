@@ -1,4 +1,4 @@
-import styles from './Auth.module.css';
+import styles from '../../styles/Auth.module.css';
 import { Link } from 'react-router-dom';
 
 export default function LoginContainer() {

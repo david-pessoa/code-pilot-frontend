@@ -1,7 +1,7 @@
 import LoginContainer from './LoginContainer';
 import RegisterContainer from './RegisterContainer';
 
-import styles from './Auth.module.css';
+import styles from '../../styles/Auth.module.css';
 
 export default function AuthContainer({ isLogin }) {
   return (
