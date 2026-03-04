@@ -1,0 +1,21 @@
+header {
+  display: flex;
+  align-items: center;
+}
+
+.menuIcon {
+  width: 55px;
+  height: 55px;
+}
+
+.menuBtn{
+  color: #FFF;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.userIcon {
+  width: 85px;
+  height: 85px;
+}

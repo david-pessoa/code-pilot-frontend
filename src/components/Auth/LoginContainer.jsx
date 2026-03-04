@@ -4,16 +4,20 @@ import { Link } from 'react-router-dom';
 export default function LoginContainer() {
   return (
     <>
-      <h2>Bem Vindo de Volta!</h2>
+      <h2 className={styles.loginTitle}>Bem Vindo de Volta!</h2>
       <form>
-        <fieldset>
+        <fieldset className={styles.fieldset}>
           <div className={styles.inputField}>
-            <label htmlFor="email">Email de login:</label>
-            <input type="text" name="email" id="email" />
+            <label htmlFor="email" className={styles.label}>
+              Email de login:
+            </label>
+            <input className={styles.input} type="text" name="email" id="email" />
           </div>
           <div className={styles.inputField}>
-            <label htmlFor="password">Senha:</label>
-            <input type="password" name="password" id="password" />
+            <label className={styles.label} htmlFor="password">
+              Senha:
+            </label>
+            <input className={styles.input} type="password" name="password" id="password" />
           </div>
         </fieldset>
         <div className={styles.forgotPassword}>

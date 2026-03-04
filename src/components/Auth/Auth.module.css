@@ -8,7 +8,7 @@
   margin-top: 4.125rem;
 }
 
-h2 {
+.loginTitle {
   margin-bottom: 6.25rem;
 }
 
@@ -16,7 +16,7 @@ h2 {
   margin-bottom: 2.5rem;
 }
 
-fieldset {
+.fieldset {
   display: flex;
   flex-direction: column;
   border: none;
@@ -40,13 +40,13 @@ fieldset {
   flex-direction: column;
 }
 
-label {
+.label {
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 7px;
 }
 
-input {
+.input {
   border: none;
   border-radius: 10px;
   height: 43px;
@@ -123,7 +123,7 @@ a {
 }
 
 @media (max-width: 750px) {
-  h2 {
+  .loginTitle {
     margin-bottom: 4rem;
   }
   .container {
@@ -131,7 +131,7 @@ a {
     padding: 1.5rem;
   }
 
-  label {
+  .label {
     font-size: 1rem;
     font-weight: 400;
   }
@@ -140,7 +140,7 @@ a {
     width: 100%;
   }
 
-  form {
+  .form {
     width: 90%;
   }
 
@@ -161,7 +161,7 @@ a {
     margin: 2rem 0;
   }
 
-  h2 {
+  .loginTitle {
     margin-bottom: 3rem;
     text-align: center;
   }
@@ -171,7 +171,7 @@ a {
     padding: 1.5rem 0.8rem;
   }
 
-  input {
+  .input {
     height: 32px;
   }
 
