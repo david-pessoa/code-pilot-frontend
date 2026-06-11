@@ -32,7 +32,6 @@ export default function Drawer({ isOpen, onClose, chatId }) {
             <h4 className={styles.conversationTitle}>Nova conversa</h4>
           </a>
         </li>
-        {console.log(chatId)}
         {conversations.map(conv => (
           <li
             key={conv.id}
@@ -40,7 +39,7 @@ export default function Drawer({ isOpen, onClose, chatId }) {
               chatId === conv.id ? styles.selected : ''
             }`}
           >
-            <a href={`chat/${conv.id}`}>
+            <a href={`/chat/${conv.id}`}>
               <h4 className={styles.conversationTitle}>{conv.name}</h4>
             </a>
 

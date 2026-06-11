@@ -31,20 +31,22 @@ export default function Conversation() {
           <FontAwesomeIcon className={styles.userIcon} icon={faCircleUser} />
         </button>
       </header>
-      <Drawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} chatId={Number(conversationId)} />
+      <Drawer
+        isOpen={isDrawerOpen}
+        onClose={() => setIsDrawerOpen(false)}
+        chatId={Number(conversationId)}
+      />
       <menu className={`${styles.chatMenu} ${isDrawerOpen ? styles.open : ''}`}>
         {/* Substituir por !messages */}
-        {!isDrawerOpen ? (
-          <>
-            <h1 className="color-gradient">
-              Olá, Érica
-              <br />
-              Como posso ajudar?
-            </h1>
-          </>
-        ) : (
+
+        <h1 className="color-gradient">
+          Olá, Érica
           <br />
-        )}
+          Como posso ajudar?
+        </h1>
+
+        <br />
+
         <InputBar />
       </menu>
     </>
