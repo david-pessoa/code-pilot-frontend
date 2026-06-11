@@ -1,10 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark, faEllipsisVertical, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import styles from '../../styles/Drawer.module.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import CustomModal from './CustomModal';
 
 export default function Drawer({ isOpen, onClose, chatId }) {
-  const [conversations, setConversations] = useState([
+  const [conversations] = useState([
     { id: 1, name: 'Processo caça ilegal' },
     { id: 2, name: 'Processo caça ilegal' },
     { id: 3, name: 'Processo caça cool' },
@@ -12,6 +13,7 @@ export default function Drawer({ isOpen, onClose, chatId }) {
     { id: 5, name: 'Processo caça ilegal' },
     { id: 6, name: 'Processo caça ilegal' },
   ]);
+  const [customModalOpen, setCustomModalopen] = useState(null);
 
   return (
     <aside className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
@@ -42,13 +44,22 @@ export default function Drawer({ isOpen, onClose, chatId }) {
             <a href={`/chat/${conv.id}`}>
               <h4 className={styles.conversationTitle}>{conv.name}</h4>
             </a>
-
-            <button type="button" className={styles.conversationListItemButton}>
+            <button
+              type="button"
+              className={styles.conversationListItemButton}
+              onClick={() =>
+                setCustomModalopen(currentId => (currentId === conv.id ? null : conv.id))
+              }
+            >
               <FontAwesomeIcon
                 className={styles.conversationListItemIcon}
                 icon={faEllipsisVertical}
               />
             </button>
+            <CustomModal
+              isOpen={conv.id === customModalOpen}
+              onClose={() => setCustomModalopen(null)}
+            />
           </li>
         ))}
       </ul>

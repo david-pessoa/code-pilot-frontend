@@ -49,7 +49,7 @@
   text-align: left;
   display: flex;
   align-items: center;
-  height: 3rem;
+  height: 3.5rem;
   border-radius: 18px;
 }
 
@@ -58,20 +58,18 @@
 }
 
 .conversationListItem.selected {
-  background-color: #00C8FF !important;
+  background-color: #00c8ff !important;
 }
 
 .conversationListItem:hover,
 .conversationListItemNewChat:hover {
-  background-color: #00A2FF;
+  background-color: #00a2ff;
 }
 
 .conversationListItem:active,
 .conversationListItemNewChat:active {
-  background-color: #00C6FD;
+  background-color: #00c6fd;
 }
-
-
 
 .conversationListItem a {
   height: 100%;
@@ -110,4 +108,55 @@
 .conversationListItemNewChatIcon {
   font-size: 1.75rem;
   margin-left: 10px;
+}
+
+.customModal {
+  display: none;
+  position: absolute;
+  left: 20rem;
+  z-index: 100;
+  background-color: #00a2ff;
+  /* width: 10rem; */
+  max-width: 10rem;
+  border-radius: 8px;
+}
+
+.customModal.isCustomModelOpen {
+  display: flex !important;
+}
+
+.modalList {
+  list-style: none;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.modalList li {
+  width: 100%;
+  height: 3rem;
+  border-radius: 8px;
+}
+
+.modalList li:hover {
+  background-color: #00c6fd;
+}
+.modalList li button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 1.125rem;
+  font-weight: 400;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  padding: 8px;
+}
+.modalList li button h5 {
+  font-size: 1.125rem;
+  font-weight: 400;
 }
