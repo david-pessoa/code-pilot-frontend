@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Drawer from '../components/Conversation/Drawer';
 import { faBars, faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import InputBar from '../components/Conversation/InputBar';
 import Chat from '../components/Conversation/Chat';
@@ -10,7 +11,9 @@ import styles from '../styles/Conversation.module.css';
 
 export default function Conversation() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [messages, setMessages] = useState(null);
+  const [messages, setMessages] = useState([]);
+
+  const { conversationId } = useParams();
 
   return (
     <>
@@ -28,13 +31,16 @@ export default function Conversation() {
           <FontAwesomeIcon className={styles.userIcon} icon={faCircleUser} />
         </button>
       </header>
-      <Drawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
+      <Drawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} chatId={Number(conversationId)} />
       <menu className={`${styles.chatMenu} ${isDrawerOpen ? styles.open : ''}`}>
-        {!messages ? (
+        {/* Substituir por !messages */}
+        {!isDrawerOpen ? (
           <>
-            <h1 className="color-gradient">Olá, Érica</h1>
-            <br />
-            <h1 className="color-gradient">Como posso ajudar?</h1>
+            <h1 className="color-gradient">
+              Olá, Érica
+              <br />
+              Como posso ajudar?
+            </h1>
           </>
         ) : (
           <br />

@@ -32,3 +32,82 @@
   width: 55px;
   height: 55px;
 }
+
+.conversationList {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.conversationListItem,
+.conversationListItemNewChat {
+  width: 90%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  border-radius: 18px;
+}
+
+.conversationListItem {
+  justify-content: space-between;
+}
+
+.conversationListItem.selected {
+  background-color: #00C8FF !important;
+}
+
+.conversationListItem:hover,
+.conversationListItemNewChat:hover {
+  background-color: #00A2FF;
+}
+
+.conversationListItem:active,
+.conversationListItemNewChat:active {
+  background-color: #00C6FD;
+}
+
+
+
+.conversationListItem a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.conversationListItem h4,
+.conversationListItem input {
+  margin-left: 10px;
+}
+
+.conversationTitle {
+  font-weight: 400;
+}
+
+.conversationListItemButton {
+  margin-right: 10px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.5rem;
+  border: none;
+}
+
+.conversationListItemButton:hover {
+  cursor: pointer;
+}
+
+.conversationListItemNewChat a {
+  display: flex;
+  gap: 30px;
+  justify-content: start;
+  width: 100%;
+}
+
+.conversationListItemNewChatIcon {
+  font-size: 1.75rem;
+  margin-left: 10px;
+}
