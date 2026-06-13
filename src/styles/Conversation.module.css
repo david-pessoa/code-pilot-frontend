@@ -9,7 +9,8 @@
   transition: 0.5s ease-in-out;
 }
 
-.header.open, .chatMenu.open{
+.header.open,
+.chatMenu.open {
   margin-left: 25.375rem;
 }
 
@@ -51,5 +52,95 @@
 
 .chatMenu {
   margin-top: 8.875rem;
-  margin-left: 11.75rem;
+  margin-left: 5rem;
+}
+
+.chatMenu h1 {
+  margin-left: 6.75rem;
+}
+
+.inputBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 30px;
+  background-color: #3a3942;
+  border-radius: 50px;
+  height: 4rem;
+  width: 90vw;
+  padding: 0 1rem;
+  gap: 1rem;
+}
+
+.inputAttachContainer, .buttonsContainer {
+  height: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.inputAttachContainer {
+  width: 82vw;
+}
+
+.buttonsContainer {
+}
+
+.inputButton {
+  color: #fff;
+  background-color: transparent;
+  font-size: 1.75rem;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  height: 82%;
+  aspect-ratio: 1/1;
+}
+
+.inputButton:hover {
+  background-color: rgba(148, 148, 148, 0.3);
+}
+.inputButton:active {
+  background-color: rgba(230, 230, 230, 0.843);
+  color: var(--code-background);
+}
+
+.inputBar textarea {
+  outline: none;
+  border: none;
+  resize: none;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.inputBar textarea.singleLine {
+  padding-top: 20px;
+}
+.inputBar textarea.multiLine {
+  padding-top: 0px;
+}
+
+.inputBar textarea:focus {
+  outline: none;
+}
+
+.inputBar textarea::-webkit-scrollbar {
+  margin-left: 4px;
+  width: 8px;
+}
+
+.inputBar textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.inputBar textarea::-webkit-scrollbar-thumb {
+  background: rgb(175, 175, 175);
+  border-radius: 5px;
 }

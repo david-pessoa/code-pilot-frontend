@@ -1,24 +1,16 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark, faEllipsisVertical, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import styles from '../../styles/Drawer.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CustomModal from './CustomModal';
 
 export default function Drawer({ isOpen, onClose, chatId }) {
-  const [conversations, setConversations] = useState([
-    { id: 1, name: 'Processo caça ilegal' },
-    { id: 2, name: 'Processo caça ilegal' },
-    { id: 3, name: 'Processo caça cool' },
-    { id: 4, name: 'Processo caça ilegal' },
-    { id: 5, name: 'Processo caça ilegal' },
-    { id: 6, name: 'Processo caça ilegal' },
-  ]);
+  const [conversations, setConversations] = useState([]);
   const [customModalOpen, setCustomModalopen] = useState(null);
   const [newConversationName, setNewConversationName] = useState('');
   const [renameInputOpen, setRenameInputOpen] = useState(null);
 
   const handleRenameConversation = conversationId => {
-
     // Realiza chamada de API no back-end
     setConversations(currentConversations => {
       const updatedConversations = currentConversations.map(chat =>
@@ -40,6 +32,10 @@ export default function Drawer({ isOpen, onClose, chatId }) {
       return updatedConversations;
     });
   };
+
+  useEffect(() => {
+    // Chama função load conversations para obter conversas do back-end
+  }, [conversations]);
 
   return (
     <aside className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
@@ -88,6 +84,7 @@ export default function Drawer({ isOpen, onClose, chatId }) {
               </>
             ) : (
               <input
+                id={`${conv.name}-${conv.id}`}
                 type="text"
                 className={styles.conversationListItemButton}
                 onChange={e => setNewConversationName(e.target.value)}
@@ -96,7 +93,6 @@ export default function Drawer({ isOpen, onClose, chatId }) {
                 }}
               />
             )}
-            {console.log(conversations)}
             <CustomModal
               isOpen={conv.id === customModalOpen}
               onClose={() => setCustomModalopen(null)}
