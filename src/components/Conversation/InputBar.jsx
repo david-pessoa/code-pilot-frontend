@@ -20,7 +20,7 @@ export default function InputBar() {
   };
 
   return (
-    <div className={styles.inputBar}>
+    <div className={`${styles.inputBar} ${multiline ? styles.multiLine : styles.singleLine}`}>
       <div className={styles.inputAttachContainer}>
         <button type="button" className={styles.inputButton}>
           <FontAwesomeIcon icon={faPaperclip} />
@@ -30,7 +30,7 @@ export default function InputBar() {
           id="input-message"
           placeholder="Escreva uma mensagem"
           onChange={handleChange}
-          className={multiline ?  styles.multiLine: styles.singleLine}
+          className={multiline ? styles.multiLine : styles.singleLine}
         ></textarea>
       </div>
       <div className={styles.buttonsContainer}>

@@ -73,6 +73,10 @@
   gap: 1rem;
 }
 
+.inputBar.multiLine {
+  height: 8rem;
+}
+
 .inputAttachContainer, .buttonsContainer {
   height: 100%;
   display: flex;
