@@ -1,7 +1,9 @@
 # Code Pilot Frontend
+
 Interface web do chatbot Code Pilot desenvolvida em React.js. O projeto tem o objetivo de desenvolver o Code Pilot, uma ferramenta de IA voltada para profissionais de TI.
 
 ## Problema
+
 Profissionais de TI lidam diariamente com diferentes fontes de informação para resolver problemas técnicos: logs de erro, documentação, repositórios de código, tickets, configurações de ambiente e ferramentas de comunicação da equipe. Esse conhecimento costuma estar fragmentado, o que torna a identificação de falhas e a busca por soluções mais lenta e dependente de pesquisas manuais ou do apoio de profissionais mais experientes.
 
 Esse cenário pode gerar impactos como:
@@ -14,6 +16,7 @@ Esse cenário pode gerar impactos como:
 - risco de aplicar soluções genéricas que não são compatíveis com o projeto.
 
 ## Solução
+
 O Code Pilot é uma interface de chatbot inteligente voltada para profissionais de TI, criada para centralizar o suporte técnico e tornar a resolução de problemas mais rápida, contextualizada e acessível.
 
 A plataforma se conecta a uma API de LLM e permite que o usuário interaja com uma IA capaz de auxiliar em dúvidas técnicas, análise de erros, interpretação de logs, explicação de códigos e consulta de documentação relacionada ao projeto.
@@ -42,6 +45,7 @@ Entre os principais benefícios esperados estão:
   - Definição de características
 
 ## Tecnologias
+
 - React 19
 - Vite
 - Font Awesome
@@ -49,15 +53,48 @@ Entre os principais benefícios esperados estão:
 - ESLint
 
 ## Arquitetura
-Usuário ➜ Pages ➜ Components ➜ Context / Services ➜ API do Code Pilot ➜ LLM
 
-Rotas principais:
-- `/` e `/login`: tela de login
-- `/register`: tela de cadastro
-- `/chat/`: Nova conversa
-- `/chat/:conversationId`: Conversa já existente
+O front-end do Code Pilot foi estruturado com uma arquitetura baseada em componentes e separação de responsabilidades. A aplicação organiza suas funcionalidades em camadas, facilitando a manutenção, a reutilização de código e a evolução do sistema conforme novas funcionalidades forem adicionadas.
+
+O fluxo principal da aplicação ocorre da seguinte forma:
+
+```
+Usuário ➜ Pages ➜ Components ➜ Context / Services ➜ API do Code Pilot ➜ LLM
+```
+
+Inicialmente, o usuário interage com uma página da aplicação. As páginas representam telas completas e organizam os elementos necessários para cada funcionalidade, como autenticação, cadastro e chat.
+
+Essas páginas são compostas por componentes reutilizáveis da interface, como campos de formulário, botões, mensagens, barra lateral, cabeçalhos e áreas de conversa. Essa separação permite que elementos visuais e comportamentais sejam reutilizados em diferentes telas, reduzindo duplicação de código.
+
+O gerenciamento de informações compartilhadas entre diferentes partes da aplicação é realizado por meio de Context API, especialmente para dados relacionados à autenticação, como usuário logado, token de acesso, estado de carregamento e ações de login ou logout.
+
+A camada de services é responsável pela comunicação com a API do Code Pilot. Ela centraliza as requisições HTTP relacionadas a autenticação, usuários, conversas e mensagens, evitando que a lógica de integração com o back-end fique diretamente acoplada às páginas ou aos componentes.
+
+Por fim, a API do Code Pilot processa as solicitações enviadas pelo front-end e realiza a comunicação com o modelo de linguagem (LLM), retornando respostas que são apresentadas na interface de chat.
+
+### Estrutura de diretórios
+
+```
+src
+├── assets/        # Imagens, ícones, fontes e demais recursos estáticos
+├── components/    # Componentes reutilizáveis da interface
+├── context/       # Contextos globais, como autenticação
+├── pages/         # Telas principais da aplicação
+├── routes/        # Configuração e proteção das rotas
+└── styles/        # Estilos CSS Modules
+```
+
+### Rotas principais
+
+| Rota                    | Descrição                                                                    |
+| ----------------------- | ---------------------------------------------------------------------------- |
+| `/` e `/login`          | Tela inicial de login.                                                       |
+| `/register`             | Tela de cadastro de novos usuários.                                          |
+| `/chat/`                | Criação de uma nova conversa com a IA.                                       |
+| `/chat/:conversationId` | Exibição e continuidade de uma conversa existente, identificada pelo seu ID. |
 
 ## Como rodar
+
 Instalação:
 
 ```bash
@@ -88,7 +125,8 @@ Lint:
 npm run lint
 ```
 
-## Variaveis de ambiente
+## Variáveis de ambiente
+
 Atualmente o frontend não usa variáveis de ambiente nem `API keys` no código.
 Por isso, não há necessidade de `.env.example` neste estado do projeto.
 Se o back-end for integrado depois, o arquivo pode passar a incluir, por exemplo:
@@ -99,15 +137,17 @@ JWT_SECRET=
 JWT_EXPIRES_IN="2h"
 ```
 
-## Decisoes tecnicas
+## Decisões técnicas
+
 - Vite foi escolhido para manter a inicialização rápida e o ciclo de desenvolvimento simples.
-- React Router DOM organiza login, cadastro e área restrita sem dependência de um framework mais pesado.
+- React.js foi escolhido para desenvolver o front-end, pois possui componentes reutilizáveis, atualização dinâmica e também consegue diferenciar diferentes estados da aplicação.
 - CSS Modules ajudam a isolar estilos por componente e reduzem colisões.
 - Font Awesome acelera a inclusão de ícones consistentes na interface.
 - O contexto de autenticação já existe como ponto de extensão, mas ainda está vazio, então a integração real com sessão/login precisa ser conectada ao back-end.
 - Algumas partes da conversa ainda têm lógica de API marcada como comentário/TODO, então o frontend está pronto para evoluir, mas ainda não entrega o ciclo completo sozinho.
 
 ## Melhorias futuras
+
 - Integrar autenticação real com back-end
 - Persistir usuário logado e tokens de sessão
 - Carregar histórico de conversas e mensagens da API
